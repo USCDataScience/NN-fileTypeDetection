@@ -4,6 +4,13 @@ import numpy as np
 from sknn.mlp import Classifier, Layer
 from sklearn.metrics import accuracy_score
 import pickle
+import logging
+import sys
+
+logging.basicConfig(
+            format="%(message)s",
+            level=logging.INFO,
+            stream=sys.stdout)
 
 # set the environment variable for theano library
 train_dir = "train.csv"
@@ -16,10 +23,9 @@ XTest = None
 YTest = None
 nn = None
 
-
 ## default parameters, change as per need
 fileHeader = "#nn"
-mimeType = "application/x-grib"
+mimeType = "application/xhtml+xml"
 numberOfInputs = 256 # this is the bytes ranging from 0..256
 numberOfOutputs = 1
 numberOfHiddenLayers = 2
@@ -55,11 +61,18 @@ def loadTestData():
 	YTest = np.int_(df[:,256])
 
 def testNeuralNetwork():
+	"""
+	This function performs the training and outputs the accuracy of the neural network.
+	"""
 	global nn
 	y_results = nn.predict(XTest)
 	print accuracy_score(YTest, y_results)
 
 def modelBuilder():
+	"""
+	This function builds the neural network model. Currently using two hidden layers
+	for fitting the neural network
+	"""
 	global nn, XTrain, YTrain, XTest, YTest
 	nn = Classifier(
     layers=[
@@ -72,6 +85,9 @@ def modelBuilder():
 	dumpNeuralNetworkParameters()
 	
 def dumpNeuralNetworkParameters():
+	"""
+	Outputs the results of the neural network parametres in the way TIKA can use to import
+	"""
 	global nn, fileHeader, testError, numberOfInputs, numberOfHiddenLayers, numberOfOutputs
 
 	nn_parameters = nn.get_parameters()

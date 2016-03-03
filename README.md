@@ -8,19 +8,38 @@ This repository contains files for running Deep Neural Network that help generat
 - Numpy
 - Theano (for leveraging GPU and building deeper netwoks)
 
+
+## Training Results
+
+```python
+Parameter `pieces` is unused for layer type `Sigmoid`.
+Parameter `pieces` is unused for layer type `Sigmoid`.
+Initializing neural network with 3 layers, 255 inputs and 2 outputs.
+Training on dataset of 222,578 samples with 57,202,546 total size.
+Terminating after specified 25 total iterations.
+0.999588904464
+```
+
+
+| Mime type     		  | Test Accuracy     | Number of Hidden Layers      
+| ------------------------|:------------------|:-----------------------
+| application/x-grib      | 92.34%			  |  2
+| application/x-grib   	  | 94.33%			  |  4
+| application/xhtml  	  | 99.5%			  |  2
+
+
+Current Run Statistics:
+Reported accuracy on application/xhtml : 99.5%
+
 ## Running the project
 
-Simpy execute:
+Simply execute:
 
 `python
 neuralNetworkTrainer.py
 `
 
 This will cause the program to generate a nnmodel file that can be used with Tika.
-
-## Current Performance Statistics
-
-The current program reports an accuracy of 92.34% using 2 hidden layers and has an estimated accuracy of 94.33% over 4 hidden layers.
 
 ## Understanding the input file
 
