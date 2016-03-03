@@ -76,7 +76,6 @@ def dumpNeuralNetworkParameters():
 
 	nn_parameters = nn.get_parameters()
 	with open("test-example.nnmodel", "a") as myfile:
-		myfile.write("#nn application/x-grib 256 2 1 0.0208829625450076\n")
 		myfile.write(fileHeader+" "+mimeType+" "+str(numberOfInputs)+" "+
 			str(numberOfHiddenLayers) + " "+str(numberOfOutputs)+" "+str(testError)+"\n")
 	for i in nn_parameters:

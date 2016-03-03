@@ -13,7 +13,7 @@ This repository contains files for running Deep Neural Network that help generat
 Simpy execute:
 
 `python
-python neuralNetworkTrainer.py
+neuralNetworkTrainer.py
 `
 
 This will cause the program to generate a nnmodel file that can be used with Tika.
