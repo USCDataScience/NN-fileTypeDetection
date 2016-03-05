@@ -36,7 +36,7 @@ Reported accuracy on application/xhtml : 99.5%
 Simply execute:
 
 `python
-neuralNetworkTrainer.py
+tester.py
 `
 
 This will cause the program to generate a nnmodel file that can be used with Tika.
