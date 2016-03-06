@@ -1,15 +1,22 @@
-### File Type Detection
+# File Type Detection
 
-This repository contains files for running Deep Neural Network that help generate NNModel files for Apache Tika.
+This repository contains files for building classifiers for file type detection. Initially the project was built for developing Deep Neural Networks in order to spit out neural network parameters for Tika to learn.
 
-## Dependecies
+However, I  have built over other classifiers for performing the same functionality.
+
+# Dependecies
 
 - Pandas
 - Numpy
 - Theano (for leveraging GPU and building deeper netwoks)
 
 
-## Training Results
+# Classifiers Supported
+
+- Decision Tree
+- Neural Network
+
+# Training Results
 
 ```python
 Parameter `pieces` is unused for layer type `Sigmoid`.
@@ -20,6 +27,7 @@ Terminating after specified 25 total iterations.
 0.999588904464
 ```
 
+## Neural Network Results
 
 | Mime type     		  | Test Accuracy     | Number of Hidden Layers      
 | ------------------------|:------------------|:-----------------------
@@ -27,9 +35,11 @@ Terminating after specified 25 total iterations.
 | application/x-grib   	  | 94.33%			  |  4
 | application/xhtml  	  | 99.5%			  |  2
 
+## Decision Tree Results
 
-Current Run Statistics:
-Reported accuracy on application/xhtml : 99.5%
+| Mime type               | Test Accuracy     
+|-------------------------|:------------------
+| application/x-grib      | 99.76%
 
 ## Running the project
 

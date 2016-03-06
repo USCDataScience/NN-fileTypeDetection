@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from classifiers.neuralNetworkClassifier import NeuralNetworkClassifier
+from classifiers.decisionTreeClassifier import DecisionTreeClassifier
 
 XTrain = None
 YTrain = None
@@ -18,7 +19,8 @@ def readData():
 	"""
 	loadTrainingData()
 	loadTestData()
-	testNeuralNetwork()
+	#testNeuralNetwork()
+	testDecisionTree()
 
 def loadTrainingData():
 	"""
@@ -51,6 +53,12 @@ def testNeuralNetwork():
 	tester.testNetwork(XTest, YTest)
 
 	tester.dumpNeuralNetParameters("x-grib")
+
+def testDecisionTree():
+	tester = DecisionTreeClassifier()
+	tester.buildModel()
+	tester.trainTree(XTrain, YTrain)
+	tester.testTree(XTest, YTest)
 
 if __name__ == '__main__':
 	readData()
