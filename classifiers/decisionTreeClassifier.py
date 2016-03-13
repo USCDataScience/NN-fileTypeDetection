@@ -3,6 +3,7 @@ from sklearn import tree
 from sklearn.metrics import accuracy_score
 
 class DecisionTreeClassifier:
+	
 	def __init__(self):
 		"""
 		This is the constructor for the decision tree classifier
@@ -18,21 +19,21 @@ class DecisionTreeClassifier:
 
 	def trainTree(self,X, Y):
 		"""
-		Training the neural network
+		Training the Decision Tree Classifier
 		"""
 
 		self.clf.fit(X, Y)
 
 	def validateTree(self,X, Y):
 		"""
-		Validate the neural network
+		Validate the Decision Tree Classifier
 		"""
 		YPred = self.clf.predict(X)
 		print accuracy_score(Y, YPred)
 
 	def testTree(self,X, Y):
 		"""
-		Test the neural network
+		Test the Decision Tree Classifier
 		"""
 		YPred = self.clf.predict(X)
 		print accuracy_score(Y, YPred)

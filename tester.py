@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from classifiers.neuralNetworkClassifier import NeuralNetworkClassifier
 from classifiers.decisionTreeClassifier import DecisionTreeClassifier
+from classifiers.supportVectorMachine import SupportVectorMachineClassifier
+from classifiers.gaussianNB import GaussianNBClassifier
 
 XTrain = None
 YTrain = None
@@ -20,7 +22,9 @@ def readData():
 	loadTrainingData()
 	loadTestData()
 	#testNeuralNetwork()
-	testDecisionTree()
+	#testDecisionTree()
+	#testSVM()
+	testGaussianNB()
 
 def loadTrainingData():
 	"""
@@ -59,6 +63,18 @@ def testDecisionTree():
 	tester.buildModel()
 	tester.trainTree(XTrain, YTrain)
 	tester.testTree(XTest, YTest)
+
+def testSVM():
+	tester = SupportVectorMachineClassifier()
+	tester.buildModel()
+	tester.trainSVM(XTrain,YTrain)
+	tester.testSVM(XTest, YTest)
+
+def testGaussianNB():
+	tester = GaussianNBClassifier()
+	tester.buildModel()
+	tester.trainGaussianNB(XTrain,YTrain)
+	tester.testGaussianNB(XTest, YTest)
 
 if __name__ == '__main__':
 	readData()
