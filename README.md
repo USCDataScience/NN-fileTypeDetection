@@ -17,6 +17,7 @@ However, I  have built over other classifiers for performing the same functional
 - Neural Network
 - Gaussian NB
 - SVM
+- Random Forest Classifier
 
 # Training Results (Neural Network)
 
@@ -54,6 +55,12 @@ Terminating after specified 25 total iterations.
 | Mime type               | Test Accuracy     
 |-------------------------|:------------------
 | application/x-grib      | 90.30%
+
+## Random Forest Classifier
+
+| Mime type               | Test Accuracy     
+|-------------------------|:------------------
+| application/x-grib      | 99.94%
 
 ## Running the project
 

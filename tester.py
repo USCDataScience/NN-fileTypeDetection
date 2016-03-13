@@ -4,6 +4,7 @@ from classifiers.neuralNetworkClassifier import NeuralNetworkClassifier
 from classifiers.decisionTreeClassifier import DecisionTreeClassifier
 from classifiers.supportVectorMachine import SupportVectorMachineClassifier
 from classifiers.gaussianNB import GaussianNBClassifier
+from classifiers.randomForestClassifier import RFClassifier
 
 XTrain = None
 YTrain = None
@@ -24,7 +25,8 @@ def readData():
 	#testNeuralNetwork()
 	#testDecisionTree()
 	#testSVM()
-	testGaussianNB()
+	#testGaussianNB()
+	testRF()
 
 def loadTrainingData():
 	"""
@@ -75,6 +77,12 @@ def testGaussianNB():
 	tester.buildModel()
 	tester.trainGaussianNB(XTrain,YTrain)
 	tester.testGaussianNB(XTest, YTest)
+
+def testRF():
+	tester = RFClassifier()
+	tester.buildModel()
+	tester.trainRF(XTrain,YTrain)
+	tester.testRF(XTest, YTest)
 
 if __name__ == '__main__':
 	readData()

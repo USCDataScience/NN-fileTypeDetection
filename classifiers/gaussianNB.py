@@ -16,7 +16,7 @@ class GaussianNBClassifier:
 		"""
 		self.clf =  GaussianNB()
 
-	def 	(self,X, Y):
+	def trainGaussianNB(self,X, Y):
 		"""
 		Training the Gaussian NB Classifier
 		"""
