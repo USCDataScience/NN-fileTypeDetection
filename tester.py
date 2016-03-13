@@ -5,6 +5,7 @@ from classifiers.decisionTreeClassifier import DecisionTreeClassifier
 from classifiers.supportVectorMachine import SupportVectorMachineClassifier
 from classifiers.gaussianNB import GaussianNBClassifier
 from classifiers.randomForestClassifier import RFClassifier
+from classifiers.kNeighborhoodClassifier import KNNClassifier
 
 XTrain = None
 YTrain = None
@@ -26,7 +27,8 @@ def readData():
 	#testDecisionTree()
 	#testSVM()
 	#testGaussianNB()
-	testRF()
+	#testRF()
+	testKNN()
 
 def loadTrainingData():
 	"""
@@ -83,6 +85,12 @@ def testRF():
 	tester.buildModel()
 	tester.trainRF(XTrain,YTrain)
 	tester.testRF(XTest, YTest)
+
+def testKNN():
+	tester = KNNClassifier()
+	tester.buildModel()
+	tester.trainKNN(XTrain,YTrain)
+	tester.testKNN(XTest, YTest)
 
 if __name__ == '__main__':
 	readData()

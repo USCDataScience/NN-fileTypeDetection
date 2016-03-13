@@ -18,6 +18,7 @@ However, I  have built over other classifiers for performing the same functional
 - Gaussian NB
 - SVM
 - Random Forest Classifier
+- K-Nearest Neighbor Classifier
 
 # Training Results (Neural Network)
 
@@ -61,6 +62,14 @@ Terminating after specified 25 total iterations.
 | Mime type               | Test Accuracy     
 |-------------------------|:------------------
 | application/x-grib      | 99.94%
+
+## KNN Classifier
+
+| Mime type               | Test Accuracy     
+|-------------------------|:------------------
+| application/x-grib      | 99.54%
+
+
 
 ## Running the project
 
