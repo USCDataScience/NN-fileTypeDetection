@@ -9,12 +9,37 @@ class KNNClassifier:
 		"""
 		self.outputHeader = "#knn"
 		self.clf = None
+		self.n_neighbors = 5
+		self.weights = "uniform"
+		self.algorithm = "auto"
 
 	def buildModel(self):
 		"""
 		This builds the model of the KNN Classifier
 		"""
-		self.clf = KNeighborsClassifier(n_neighbors=3)
+		self.clf = KNeighborsClassifier(n_neighbors=self.n_neighbors,
+					 	weights = self.weights, algorithm=self.algorithm)
+
+	def setNeighbors(self, param):
+		"""
+		This sets the n neighbor for the KNN Classifier.
+		"""
+		self.n_neighbors = param
+
+	def setAlgorithm(self, param):
+		"""
+		This sets the algorithm parameter for the KNN Classifier
+		"""
+		if param in ["auto", "ball_tree", "kd_tree", "brute"]:
+			self.algorithm = param
+		else:
+			print "unknown parameter defaulting to auto."
+
+	def setWeights(self, param):
+		"""
+		This sets the weights parameter for KNN Classifier 
+		"""
+		self.weights = param
 
 	def trainKNN(self,X, Y):
 		"""
