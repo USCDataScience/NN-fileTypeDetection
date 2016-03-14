@@ -2,14 +2,16 @@
 
 This repository contains files for building classifiers for file type detection. Initially the project was built for developing Deep Neural Networks in order to spit out neural network parameters for Tika to learn.
 
-However, I  have built over other classifiers for performing the same functionality.
+However, I  have built over other classifiers for performing the same functionality. This repository now supports almost 6 classifiers and preprocessors for creating your on dataset.
+
+I highly encourage contributors to develop their own dataset and try out the different classifiers to update the result.
 
 # Dependecies
 
 - Pandas
 - Numpy
 - Theano (for leveraging GPU and building deeper netwoks)
-
+- Sklearn
 
 # Classifiers Supported
 
@@ -19,17 +21,6 @@ However, I  have built over other classifiers for performing the same functional
 - SVM
 - Random Forest Classifier
 - K-Nearest Neighbor Classifier
-
-# Training Results (Neural Network)
-
-```python
-Parameter `pieces` is unused for layer type `Sigmoid`.
-Parameter `pieces` is unused for layer type `Sigmoid`.
-Initializing neural network with 3 layers, 255 inputs and 2 outputs.
-Training on dataset of 222,578 samples with 57,202,546 total size.
-Terminating after specified 25 total iterations.
-0.999588904464
-```
 
 ## Neural Network Results
 
@@ -73,16 +64,17 @@ Terminating after specified 25 total iterations.
 
 ## Running the project
 
-Simply execute:
+Each classifier in the classifier package can be used to train your model. Classifiers follow a simple structure which involves three steps:
+- build the model
+- train the classifier
+- test the classifier
 
-`python
-tester.py
-`
-
-This will cause the program to generate a nnmodel file that can be used with Tika.
+The neural network is special and generates a nnmodel file that can be used with Apache Tika in order to train the NN to work on content based detection and not using Magic Numbers.
 
 ## Understanding the input file
 
 It is assumed that the input training files have the following format:
 - First 256 columns correspond to the byte frequency companded using any function you like
 - The last column is the output column.
+
+Wonderng how to go ahead and create dataset like the one used? The preprocessor contains important constructs that will help generate the dataset needed.
