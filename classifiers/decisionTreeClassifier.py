@@ -3,6 +3,7 @@ from sklearn import tree
 from sklearn.metrics import accuracy_score
 import sklearn
 from warnings import warn
+import cPickle
 
 class DecisionTreeClassifier:
 
@@ -61,8 +62,11 @@ class DecisionTreeClassifier:
 		"""
 		Training the Decision Tree Classifier
 		"""
-
 		self.clf.fit(X, Y)
+
+	def pickleClassifier(self):
+		with open('dtclassifier.pkl', 'wb') as fid:
+			cPickle.dump(self.clf, fid)
 
 	def validateTree(self,X, Y):
 		"""
@@ -77,6 +81,7 @@ class DecisionTreeClassifier:
 		"""
 		YPred = self.clf.predict(X)
 		print accuracy_score(Y, YPred)
+		tree.export_graphviz(self.clf, out_file='tree.dot') 
 		self.treeToJson(self.clf, [str(("byte"+str(i+1))) for i in range(0,256)])
 
 	def node_to_str(self, tree, node_id, criterion, feature_names):
@@ -173,4 +178,5 @@ class DecisionTreeClassifier:
 		else:
 			self.json = self.json + self.recurse(decision_tree.tree_, 0, criterion="decision_tree.criterion", feature_names = feature_names)
 	 
-		return self.json
+		with open("dtjson.json","wb") as datafile:
+			datafile.write(self.json)
