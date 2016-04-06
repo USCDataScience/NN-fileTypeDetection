@@ -6,6 +6,10 @@ However, I  have built over other classifiers for performing the same functional
 
 I highly encourage contributors to develop their own dataset and try out the different classifiers to update the result.
 
+## Current Status
+
+Deploy a flask app leveraging decision tree to classify file.
+
 ## Dependencies
 
 - Pandas
