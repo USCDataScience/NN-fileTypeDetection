@@ -64,7 +64,11 @@ Deploy a flask app leveraging decision tree to classify file.
 |-------------------------|:------------------
 | application/x-grib      | 99.54%
 
+### Stochastic Gradient Descent
 
+| Mime type               | Test Accuracy     
+|-------------------------|:------------------
+| application/x-grib      | 98.99
 
 ## Running the project
 

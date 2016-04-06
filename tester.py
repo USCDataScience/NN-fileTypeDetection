@@ -6,6 +6,7 @@ from classifiers.supportVectorMachine import SupportVectorMachineClassifier
 from classifiers.gaussianNB import GaussianNBClassifier
 from classifiers.randomForestClassifier import RFClassifier
 from classifiers.kNeighborhoodClassifier import KNNClassifier
+from classifiers.stochasticgradientDescentClassifier import GDClassifier
 
 XTrain = None
 YTrain = None
@@ -24,11 +25,12 @@ def readData():
 	loadTrainingData()
 	loadTestData()
 	#testNeuralNetwork()
-	testDecisionTree()
+	#testDecisionTree()
 	#testSVM()
 	#testGaussianNB()
 	#testRF()
 	#testKNN()
+	testGDC()
 
 def loadTrainingData():
 	"""
@@ -92,6 +94,13 @@ def testKNN():
 	tester.buildModel()
 	tester.trainKNN(XTrain,YTrain)
 	tester.testKNN(XTest, YTest)
+
+def testGDC():
+	tester = GDClassifier()
+	tester.buildModel()
+	tester.trainGDC(XTrain,YTrain)
+	tester.testGDC(XTest, YTest)
+
 
 if __name__ == '__main__':
 	readData()

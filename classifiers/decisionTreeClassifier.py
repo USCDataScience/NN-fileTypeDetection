@@ -65,6 +65,9 @@ class DecisionTreeClassifier:
 		self.clf.fit(X, Y)
 
 	def pickleClassifier(self):
+		"""
+		pickles the classifier.
+		"""
 		with open('dtclassifier.pkl', 'wb') as fid:
 			cPickle.dump(self.clf, fid)
 

@@ -1,7 +1,7 @@
 import sys
 import json
 import csv
-
+import os
 
 class Preprocessor:
 
@@ -85,6 +85,12 @@ class Preprocessor:
 
 		table.append(key)
 		self.output.append(table)
+
+	def computeOnlyFingerPrint(self, filename):
+		table  = self.convertToByteTable(filename)
+		table = self.compandBFD(table)
+		return table
+
 
 	def outputToFile(self):
 		"""
