@@ -14,7 +14,14 @@ class GDClassifier:
         self.penalty = "l2" #deafult value
         self.acceptedLossValues = ["hinge", "log", "modified_huber",
          "squared_hinge", "perceptron"]
+        self.n_iter = None
         self.acceptedPenaltyValues = [ "none", "l2", "l1", "elasticnet"]
+
+    def setNumberOfIteration(self, n_iters):
+        """
+        Sets the number of iteration of Gradient Descent Classifier
+        """
+        self.n_iter = n_iters
 
     def setLoss(self, loss):
         """
@@ -46,7 +53,7 @@ class GDClassifier:
         This builds the model of the Gradient Descent Classifier
         """
         logging.info("Building Model")
-        self.clf = SGDClassifier(loss="hinge", penalty="l2")
+        self.clf = SGDClassifier(loss=self.loss, penalty=self.penalty, n_iter = self.n_iter)
         logging.info("Finished Building Model")
 
     def trainGDC(self,X, Y):
