@@ -6,14 +6,18 @@ However, I  have built over other classifiers for performing the same functional
 
 I highly encourage contributors to develop their own dataset and try out the different classifiers to update the result.
 
-# Dependecies
+## Current Status
+
+Scafolding Created for the Flask App that leverages the Model Files Created by the Library 
+
+## Dependencies
 
 - Pandas
 - Numpy
 - Theano (for leveraging GPU and building deeper netwoks)
 - Sklearn
 
-# Classifiers Supported
+## Classifiers Supported
 
 - Decision Tree
 - Neural Network
@@ -22,7 +26,7 @@ I highly encourage contributors to develop their own dataset and try out the dif
 - Random Forest Classifier
 - K-Nearest Neighbor Classifier
 
-## Neural Network Results
+### Neural Network Results
 
 | Mime type     		  | Test Accuracy     | Number of Hidden Layers      
 | ------------------------|:------------------|:-----------------------
@@ -30,37 +34,41 @@ I highly encourage contributors to develop their own dataset and try out the dif
 | application/x-grib   	  | 94.33%			  |  4
 | application/xhtml  	  | 99.5%			  |  2
 
-## Decision Tree Results
+### Decision Tree Results
 
 | Mime type               | Test Accuracy     
 |-------------------------|:------------------
 | application/x-grib      | 99.76%
 
-## Support Vector Machine
+### Support Vector Machine
 
 | Mime type               | Test Accuracy     
 |-------------------------|:------------------
 | application/x-grib      | 90.85%
 
-## Gaussian Naive Bayes
+### Gaussian Naive Bayes
 
 | Mime type               | Test Accuracy     
 |-------------------------|:------------------
 | application/x-grib      | 90.30%
 
-## Random Forest Classifier
+### Random Forest Classifier
 
 | Mime type               | Test Accuracy     
 |-------------------------|:------------------
 | application/x-grib      | 99.94%
 
-## KNN Classifier
+### KNN Classifier
 
 | Mime type               | Test Accuracy     
 |-------------------------|:------------------
 | application/x-grib      | 99.54%
 
+### Stochastic Gradient Descent
 
+| Mime type               | Test Accuracy     
+|-------------------------|:------------------
+| application/x-grib      | 98.99
 
 ## Running the project
 
