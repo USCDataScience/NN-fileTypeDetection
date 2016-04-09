@@ -1,7 +1,8 @@
 import sys
 import json
 import csv
-
+import os
+import logging
 
 class Preprocessor:
 
@@ -50,21 +51,23 @@ class Preprocessor:
 		return table
 
 	def fileReader(self,filename, outputToFile = False, logging = True):
-
-		if type(filename) is list:
-			result  = 0
-			for files in filename:
-				result+=1
-				self.computeFingerPrint(files)
+		try:
+			if type(filename) is list:
+				result  = 0
+				for files in filename:
+					result+=1
+					self.computeFingerPrint(files)
+					if logging:
+						self.logger("processed "+files)
+			else:
+				self.computeFingerPrint(filename)
 				if logging:
-					self.logger("processed "+files)
-		else:
-			self.computeFingerPrint(filename)
-			if logging:
-				self.logger("processed "+filename)
+					self.logger("processed "+filename)
 
-		if outputToFile:
-			self.outputToFile()
+			if outputToFile:
+				self.outputToFile()
+		except Exception as e:
+			logging.warning("No such file found, %s", e)
 
 	def computeFingerPrint(self, filename):
 		"""
@@ -86,6 +89,12 @@ class Preprocessor:
 		table.append(key)
 		self.output.append(table)
 
+	def computeOnlyFingerPrint(self, filename):
+		table  = self.convertToByteTable(filename)
+		table = self.compandBFD(table)
+		return table
+
+
 	def outputToFile(self):
 		"""
 		Outputs the file to csv
@@ -100,12 +109,3 @@ class Preprocessor:
 		with open(self.outputFileName, "wb") as f:
 			writer = csv.writer(f)
 			writer.writerows(newOutput)
-
-	def logger(self, message):
-		"""
-		Generic Logger function that prints out some kind of message onto the output stream.
-
-		input: string or message
-		output: outputs loggin information to the standard output stream
-		"""
-		print message
