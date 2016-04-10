@@ -8,7 +8,7 @@ I highly encourage contributors to develop their own dataset and try out the dif
 
 ## Current Status
 
-Scafolding Created for the Flask App that leverages the Model Files Created by the Library 
+Scafolding Created for the Flask App that leverages the Model Files Created by the Library the Flask app leverages a decision tree to classify files.
 
 ## Dependencies
 
