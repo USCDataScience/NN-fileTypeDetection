@@ -8,7 +8,7 @@ I highly encourage contributors to develop their own dataset and try out the dif
 
 ## Current Status
 
-We are working on scaffolding in the form of a [Flask App](tree/master/app/) that employs a decision tree to classify files and that uses the built model files from the library.
+We are working on scaffolding in the form of a [Flask App](app/) that employs a decision tree to classify files and that uses the built model files from the library.
 
 ## Dependencies
 
