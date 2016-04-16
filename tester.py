@@ -25,6 +25,8 @@ from classifiers.gaussianNB import GaussianNBClassifier
 from classifiers.randomForestClassifier import RFClassifier
 from classifiers.kNeighborhoodClassifier import KNNClassifier
 from classifiers.stochasticgradientDescentClassifier import GDClassifier
+from classifiers.gradientBoostingClassifier import GBClassifier
+
 
 XTrain = None
 YTrain = None
@@ -48,7 +50,9 @@ def readData():
 	#testGaussianNB()
 	#testRF()
 	#testKNN()
-	testGDC()
+	#testGDC()
+	testGBC()
+
 
 def loadTrainingData():
 	"""
@@ -118,6 +122,13 @@ def testGDC():
 	tester.buildModel()
 	tester.trainGDC(XTrain,YTrain)
 	tester.testGDC(XTest, YTest)
+
+def testGBC():
+	tester = GBClassifier()
+	tester.buildModel()
+	tester.trainGBC(XTrain,YTrain)
+	tester.testGBC(XTest, YTest)
+
 
 
 if __name__ == '__main__':

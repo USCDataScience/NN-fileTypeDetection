@@ -25,6 +25,7 @@ We are working on scaffolding in the form of a [Flask App](app/) that employs a 
 - SVM
 - Random Forest Classifier
 - K-Nearest Neighbor Classifier
+- Gradient Boosting Classifier
 
 ### Neural Network Results
 
@@ -69,6 +70,13 @@ We are working on scaffolding in the form of a [Flask App](app/) that employs a 
 | Mime type               | Test Accuracy     
 |-------------------------|:------------------
 | application/x-grib      | 98.99
+
+### Gradient Boosting Classifier
+
+| Mime type               | Test Accuracy     
+|-------------------------|:------------------
+| application/x-grib      | 99.91
+
 
 ## Running the project
 
