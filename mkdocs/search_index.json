@@ -1,0 +1,79 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Overview\n\n\nThis repository contains files for building classifiers for file type detection. Initially the project was built for developing Deep Neural Networks in order to spit out neural network parameters for Tika to learn.\n\n\nHowever, I  have built over other classifiers for performing the same functionality. This repository now supports almost 6 classifiers and preprocessors for creating your on dataset.\n\n\nI highly encourage contributors to develop their own dataset and try out the different classifiers to update the result.\n\n\nCurrent Status\n\n\nWe are working on scaffolding in the form of a \nFlask App\n that employs a decision tree to classify files and that uses the built model files from the library.\n\n\nDependencies\n\n\n\n\nPandas\n\n\nNumpy\n\n\nTheano (for leveraging GPU and building deeper netwoks)\n\n\nSklearn\n\n\n\n\nClassifiers Supported\n\n\n\n\nDecision Tree\n\n\nNeural Network\n\n\nGaussian NB\n\n\nSVM\n\n\nRandom Forest Classifier\n\n\nK-Nearest Neighbor Classifier\n\n\nGradient Boosting Classifier\n\n\n\n\nNeural Network Results\n\n\n\n\n\n\n\n\nMime type\n\n\nTest Accuracy\n\n\nNumber of Hidden Layers\n\n\n\n\n\n\n\n\n\n\napplication/x-grib\n\n\n92.34%\n\n\n2\n\n\n\n\n\n\napplication/x-grib\n\n\n94.33%\n\n\n4\n\n\n\n\n\n\napplication/xhtml\n\n\n99.5%\n\n\n2\n\n\n\n\n\n\n\n\nDecision Tree Results\n\n\n\n\n\n\n\n\nMime type\n\n\nTest Accuracy\n\n\n\n\n\n\n\n\n\n\napplication/x-grib\n\n\n99.76%\n\n\n\n\n\n\n\n\nSupport Vector Machine\n\n\n\n\n\n\n\n\nMime type\n\n\nTest Accuracy\n\n\n\n\n\n\n\n\n\n\napplication/x-grib\n\n\n90.85%\n\n\n\n\n\n\n\n\nGaussian Naive Bayes\n\n\n\n\n\n\n\n\nMime type\n\n\nTest Accuracy\n\n\n\n\n\n\n\n\n\n\napplication/x-grib\n\n\n90.30%\n\n\n\n\n\n\n\n\nRandom Forest Classifier\n\n\n\n\n\n\n\n\nMime type\n\n\nTest Accuracy\n\n\n\n\n\n\n\n\n\n\napplication/x-grib\n\n\n99.94%\n\n\n\n\n\n\n\n\nKNN Classifier\n\n\n\n\n\n\n\n\nMime type\n\n\nTest Accuracy\n\n\n\n\n\n\n\n\n\n\napplication/x-grib\n\n\n99.54%\n\n\n\n\n\n\n\n\nStochastic Gradient Descent\n\n\n\n\n\n\n\n\nMime type\n\n\nTest Accuracy\n\n\n\n\n\n\n\n\n\n\napplication/x-grib\n\n\n98.99\n\n\n\n\n\n\n\n\nGradient Boosting Classifier\n\n\n\n\n\n\n\n\nMime type\n\n\nTest Accuracy\n\n\n\n\n\n\n\n\n\n\napplication/x-grib\n\n\n99.91\n\n\n\n\n\n\n\n\nRunning the project\n\n\nEach classifier in the classifier package can be used to train your model. Classifiers follow a simple structure which involves three steps:\n- build the model\n- train the classifier\n- test the classifier\n\n\nThe neural network is special and generates a nnmodel file that can be used with Apache Tika in order to train the NN to work on content based detection and not using Magic Numbers.\n\n\nUnderstanding the input file\n\n\nIt is assumed that the input training files have the following format:\n- First 256 columns correspond to the byte frequency companded using any function you like\n- The last column is the output column.\n\n\nWonderng how to go ahead and create dataset like the one used? The preprocessor contains important constructs that will help generate the dataset needed.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#overview", 
+            "text": "This repository contains files for building classifiers for file type detection. Initially the project was built for developing Deep Neural Networks in order to spit out neural network parameters for Tika to learn.  However, I  have built over other classifiers for performing the same functionality. This repository now supports almost 6 classifiers and preprocessors for creating your on dataset.  I highly encourage contributors to develop their own dataset and try out the different classifiers to update the result.", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#current-status", 
+            "text": "We are working on scaffolding in the form of a  Flask App  that employs a decision tree to classify files and that uses the built model files from the library.", 
+            "title": "Current Status"
+        }, 
+        {
+            "location": "/#dependencies", 
+            "text": "Pandas  Numpy  Theano (for leveraging GPU and building deeper netwoks)  Sklearn", 
+            "title": "Dependencies"
+        }, 
+        {
+            "location": "/#classifiers-supported", 
+            "text": "Decision Tree  Neural Network  Gaussian NB  SVM  Random Forest Classifier  K-Nearest Neighbor Classifier  Gradient Boosting Classifier", 
+            "title": "Classifiers Supported"
+        }, 
+        {
+            "location": "/#neural-network-results", 
+            "text": "Mime type  Test Accuracy  Number of Hidden Layers      application/x-grib  92.34%  2    application/x-grib  94.33%  4    application/xhtml  99.5%  2", 
+            "title": "Neural Network Results"
+        }, 
+        {
+            "location": "/#decision-tree-results", 
+            "text": "Mime type  Test Accuracy      application/x-grib  99.76%", 
+            "title": "Decision Tree Results"
+        }, 
+        {
+            "location": "/#support-vector-machine", 
+            "text": "Mime type  Test Accuracy      application/x-grib  90.85%", 
+            "title": "Support Vector Machine"
+        }, 
+        {
+            "location": "/#gaussian-naive-bayes", 
+            "text": "Mime type  Test Accuracy      application/x-grib  90.30%", 
+            "title": "Gaussian Naive Bayes"
+        }, 
+        {
+            "location": "/#random-forest-classifier", 
+            "text": "Mime type  Test Accuracy      application/x-grib  99.94%", 
+            "title": "Random Forest Classifier"
+        }, 
+        {
+            "location": "/#knn-classifier", 
+            "text": "Mime type  Test Accuracy      application/x-grib  99.54%", 
+            "title": "KNN Classifier"
+        }, 
+        {
+            "location": "/#stochastic-gradient-descent", 
+            "text": "Mime type  Test Accuracy      application/x-grib  98.99", 
+            "title": "Stochastic Gradient Descent"
+        }, 
+        {
+            "location": "/#gradient-boosting-classifier", 
+            "text": "Mime type  Test Accuracy      application/x-grib  99.91", 
+            "title": "Gradient Boosting Classifier"
+        }, 
+        {
+            "location": "/#running-the-project", 
+            "text": "Each classifier in the classifier package can be used to train your model. Classifiers follow a simple structure which involves three steps:\n- build the model\n- train the classifier\n- test the classifier  The neural network is special and generates a nnmodel file that can be used with Apache Tika in order to train the NN to work on content based detection and not using Magic Numbers.", 
+            "title": "Running the project"
+        }, 
+        {
+            "location": "/#understanding-the-input-file", 
+            "text": "It is assumed that the input training files have the following format:\n- First 256 columns correspond to the byte frequency companded using any function you like\n- The last column is the output column.  Wonderng how to go ahead and create dataset like the one used? The preprocessor contains important constructs that will help generate the dataset needed.", 
+            "title": "Understanding the input file"
+        }
+    ]
+}

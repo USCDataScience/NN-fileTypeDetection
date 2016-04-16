@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>ML Based File Type Detection</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> ML Based File Type Detection</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Home</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#overview">Overview</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#current-status">Current Status</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#dependencies">Dependencies</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#classifiers-supported">Classifiers Supported</a></li>
+                
+                    <li><a class="toctree-l4" href="#neural-network-results">Neural Network Results</a></li>
+                
+                    <li><a class="toctree-l4" href="#decision-tree-results">Decision Tree Results</a></li>
+                
+                    <li><a class="toctree-l4" href="#support-vector-machine">Support Vector Machine</a></li>
+                
+                    <li><a class="toctree-l4" href="#gaussian-naive-bayes">Gaussian Naive Bayes</a></li>
+                
+                    <li><a class="toctree-l4" href="#random-forest-classifier">Random Forest Classifier</a></li>
+                
+                    <li><a class="toctree-l4" href="#knn-classifier">KNN Classifier</a></li>
+                
+                    <li><a class="toctree-l4" href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
+                
+                    <li><a class="toctree-l4" href="#gradient-boosting-classifier">Gradient Boosting Classifier</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#running-the-project">Running the project</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#understanding-the-input-file">Understanding the input file</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">ML Based File Type Detection</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="overview">Overview</h2>
+<p>This repository contains files for building classifiers for file type detection. Initially the project was built for developing Deep Neural Networks in order to spit out neural network parameters for Tika to learn.</p>
+<p>However, I  have built over other classifiers for performing the same functionality. This repository now supports almost 6 classifiers and preprocessors for creating your on dataset.</p>
+<p>I highly encourage contributors to develop their own dataset and try out the different classifiers to update the result.</p>
+<h2 id="current-status">Current Status</h2>
+<p>We are working on scaffolding in the form of a <a href="./app/">Flask App</a> that employs a decision tree to classify files and that uses the built model files from the library.</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>Pandas</li>
+<li>Numpy</li>
+<li>Theano (for leveraging GPU and building deeper netwoks)</li>
+<li>Sklearn</li>
+</ul>
+<h2 id="classifiers-supported">Classifiers Supported</h2>
+<ul>
+<li>Decision Tree</li>
+<li>Neural Network</li>
+<li>Gaussian NB</li>
+<li>SVM</li>
+<li>Random Forest Classifier</li>
+<li>K-Nearest Neighbor Classifier</li>
+<li>Gradient Boosting Classifier</li>
+</ul>
+<h3 id="neural-network-results">Neural Network Results</h3>
+<table>
+<thead>
+<tr>
+<th>Mime type</th>
+<th align="left">Test Accuracy</th>
+<th align="left">Number of Hidden Layers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-grib</td>
+<td align="left">92.34%</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td>application/x-grib</td>
+<td align="left">94.33%</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td>application/xhtml</td>
+<td align="left">99.5%</td>
+<td align="left">2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decision-tree-results">Decision Tree Results</h3>
+<table>
+<thead>
+<tr>
+<th>Mime type</th>
+<th align="left">Test Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-grib</td>
+<td align="left">99.76%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="support-vector-machine">Support Vector Machine</h3>
+<table>
+<thead>
+<tr>
+<th>Mime type</th>
+<th align="left">Test Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-grib</td>
+<td align="left">90.85%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gaussian-naive-bayes">Gaussian Naive Bayes</h3>
+<table>
+<thead>
+<tr>
+<th>Mime type</th>
+<th align="left">Test Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-grib</td>
+<td align="left">90.30%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-forest-classifier">Random Forest Classifier</h3>
+<table>
+<thead>
+<tr>
+<th>Mime type</th>
+<th align="left">Test Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-grib</td>
+<td align="left">99.94%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="knn-classifier">KNN Classifier</h3>
+<table>
+<thead>
+<tr>
+<th>Mime type</th>
+<th align="left">Test Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-grib</td>
+<td align="left">99.54%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stochastic-gradient-descent">Stochastic Gradient Descent</h3>
+<table>
+<thead>
+<tr>
+<th>Mime type</th>
+<th align="left">Test Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-grib</td>
+<td align="left">98.99</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gradient-boosting-classifier">Gradient Boosting Classifier</h3>
+<table>
+<thead>
+<tr>
+<th>Mime type</th>
+<th align="left">Test Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/x-grib</td>
+<td align="left">99.91</td>
+</tr>
+</tbody>
+</table>
+<h2 id="running-the-project">Running the project</h2>
+<p>Each classifier in the classifier package can be used to train your model. Classifiers follow a simple structure which involves three steps:
+- build the model
+- train the classifier
+- test the classifier</p>
+<p>The neural network is special and generates a nnmodel file that can be used with Apache Tika in order to train the NN to work on content based detection and not using Magic Numbers.</p>
+<h2 id="understanding-the-input-file">Understanding the input file</h2>
+<p>It is assumed that the input training files have the following format:
+- First 256 columns correspond to the byte frequency companded using any function you like
+- The last column is the output column.</p>
+<p>Wonderng how to go ahead and create dataset like the one used? The preprocessor contains important constructs that will help generate the dataset needed.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-04-16 17:40:48.574653
+-->
